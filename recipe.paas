@@ -1,0 +1,3 @@
+#!/bin/sh
+curl -o mac.os.x.virtualbox-4.2.18.dmg http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
+hdiutil mount mac.os.x.virtualbox-4.2.18.dmg
