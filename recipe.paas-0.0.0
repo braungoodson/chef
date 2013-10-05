@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "\\033[47m\\033[30mGET\\033[48m\\033[0m\\033[32m 200\\033[0m OK"
+sleep 1
 mkdir -p ~/chef/recipe/paas/virtualbox/installedvirtualbox
 mkdir ~/chef/recipe/paas/virtualbox/virtualboxinstallerfiles
 curl -o ~/chef/recipe/paas/virtualbox/virtualboxinstallerimage http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
