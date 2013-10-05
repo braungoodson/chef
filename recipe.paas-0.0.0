@@ -1,0 +1,22 @@
+#!/bin/sh
+echo "\\033[30mGET \\033[32m200 OK\\033[0m"
+#echo "\\033[33mNaming variables...\\033[0m"
+#chefdirectory=~/chef
+#chefrecipedirectory=$chefdirectory/recipe
+#paas=$chefrecipedirectory/paas
+#virtualboxinstallerimage=virtualboxinstallerimage
+#virtualboxinstallerdirectory=$pass/virtualboxinstallerdirectory
+#virtualboxinstallerurl=http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
+#virtualboxpackage=$virtualboxinstallerdirectory/VirtualBox.pkg
+#mkdir -p $paas
+#cd $paas
+#curl -o $virtualboxinstallerimage $virtualboxinstallerurl
+#hdiutil mount $virtualboxinstallerimage -mountpoint $virtualboxinstallerdirectory
+#cd $virtualboxinstallerdirectory
+#echo "\\033[31mYou need an administrator password for this package.\\033[0m"
+#sudo installer -pkg $virtualboxpackage -target ./
+mkdir -p ~/chef/recipe/paas/virtualbox/installedvirtualbox
+curl -o virtualboxinstallerimage ~/chef/recipe/paas/virtualbox
+hdiutil mount ~/chef/recipe/paas/virtualbox/virtualboxinstallerimage ~/chef/recipe/paas/virtualbox/virtualboxinstallerfiles
+echo "\\033[31mYou need an administrator password for this chef recipe.\\033[0m"
+sudo installer -pkg ~/chef/recipe/paas/virtualbox/virtualboxinstallerfiles/VirtualBox.pkg -target ~/chef/recipe/paas/virtualbox/virtualbox -target ~/chef/recipe/paas/virtualbox/installedvirtualbox
