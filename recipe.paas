@@ -2,10 +2,18 @@
 chefdirectory=~/chef
 chefrecipedirectory=$chefdirectory/recipe
 paas=$chefrecipedirectory/paas
-virtualboxinstaller=virtualboxinstaller
-virtualboxdirectory=$pass/virtualbox
+virtualboxinstallerimage=virtualboxinstallerimage
+virtualboxinstallerdirectory=$pass/virtualboxinstallerdirectory
 virtualboxinstallerurl=http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
+virtualboxpackage=$virtualboxinstallerdirectory/VirtualBox.pkg
 mkdir -p $paas
 cd $paas
-curl -o $virtualboxinstaller $virtualboxinstallerurl
-hdiutil mount $virtualboxinstaller -mountpoint $virtualboxdirectory
+curl -o $virtualboxinstallerimage $virtualboxinstallerurl
+hdiutil mount $virtualboxinstallerimage -mountpoint $virtualboxinstallerdirectory
+cd $virtualboxinstallerdirectory
+echo "\\033[34mYou need to provide an administrator password to install this package.\\033[0m"
+echo "\\033[32mYou need to provide an administrator password to install this package.\\033[0m"
+echo "\\033[33mYou need to provide an administrator password to install this package.\\033[0m"
+echo "\\033[36mYou need to provide an administrator password to install this package.\\033[0m"
+echo "\\033[31mYou need to provide an administrator password to install this package.\\033[0m"
+sudo installer -pkg $virtualboxpackage -target ./
