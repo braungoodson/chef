@@ -9,5 +9,3 @@ mkdir -p $paas
 cd $paas
 curl -o $virtualboxinstaller $virtualboxinstallerurl
 hdiutil mount $virtualboxinstaller -mountpoint $virtualboxdirectory
-PATH=$PATH:$virtualboxdirectory
-
