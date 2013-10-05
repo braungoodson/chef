@@ -11,9 +11,4 @@ cd $paas
 curl -o $virtualboxinstallerimage $virtualboxinstallerurl
 hdiutil mount $virtualboxinstallerimage -mountpoint $virtualboxinstallerdirectory
 cd $virtualboxinstallerdirectory
-echo "\\033[34mYou need to provide an administrator password to install this package.\\033[0m"
-echo "\\033[32mYou need to provide an administrator password to install this package.\\033[0m"
-echo "\\033[33mYou need to provide an administrator password to install this package.\\033[0m"
-echo "\\033[36mYou need to provide an administrator password to install this package.\\033[0m"
-echo "\\033[31mYou need to provide an administrator password to install this package.\\033[0m"
-sudo installer -pkg $virtualboxpackage -target ./
+installer -pkg $virtualboxpackage -target ./
