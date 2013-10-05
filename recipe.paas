@@ -1,5 +1,13 @@
 #!/bin/sh
-mkdir -p /chef/recipe/paas
-cd /chef/recipe/paas
-curl -o virtualboxinstaller http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
-hdiutil -attach virtualboxinstaller -mountpoint /chef/recipe/paas/virtualbox
+chefdirectory=~/chef
+chefrecipedirectory=$chefdirectory/recipe
+paas=$chefrecipedirectory/paas
+virtualboxinstaller=virtualboxinstaller
+virtualboxdirectory=$pass/virtualbox
+virtualboxinstallerurl=http://dlc.sun.com.edgesuite.net/virtualbox/4.2.18/VirtualBox-4.2.18-88780-OSX.dmg
+mkdir -p $paas
+cd $paas
+curl -o $virtualboxinstaller $virtualboxinstallerurl
+hdiutil mount $virtualboxinstaller -mountpoint $virtualboxdirectory
+PATH=$PATH:$virtualboxdirectory
+
